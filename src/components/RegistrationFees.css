@@ -1,0 +1,662 @@
+/* Registration Fees Page - AdmissionForm Theme */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  background: #1a1a2e;
+  color: #ffffff;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ============================================
+   BACKGROUND IMAGE - FULL PAGE
+   ============================================ */
+
+.rf-register-container {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+  background: #1a1a2e;
+}
+
+.rf-background-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.rf-background-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+}
+
+/* Ensure background image works on all devices */
+@media screen and (min-width: 768px) {
+  .rf-background-wrapper {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .rf-background-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+/* Mobile devices */
+@media screen and (max-width: 767px) {
+  .rf-background-wrapper {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .rf-background-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.rf-background-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.rf-gradient-fallback {
+  background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+}
+
+/* ============================================
+   REGISTRATION CARD
+   ============================================ */
+
+.rf-register-card {
+  position: relative;
+  z-index: 1;
+  background: rgba(29, 27, 27, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 24px;
+  padding: 48px 40px;
+  width: 100%;
+  max-width: 800px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  animation: rf-fadeInUp 0.6s ease-out;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Typography */
+.rf-title {
+  font-size: 32px;
+  font-weight: 700;
+  text-align: center;
+  color: #ffffff;
+  margin: 0 0 8px 0;
+  letter-spacing: -0.5px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.rf-subtitle {
+  text-align: center;
+  color: #6b7280;
+  margin: 0 0 32px 0;
+  font-size: 15px;
+  font-weight: 400;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  padding-bottom: 20px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Sections */
+.rf-section {
+  margin-bottom: 30px;
+}
+
+.rf-section-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 15px;
+  letter-spacing: 0.5px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* Summary Grid */
+.rf-summary-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.rf-summary-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.rf-summary-label {
+  font-size: 12px;
+  color: #9ca3af;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.rf-summary-value {
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffff;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.rf-amount {
+  color: #ef4444;
+  font-size: 18px;
+}
+
+/* Payment Amount */
+.rf-payment-section {
+  background: rgba(79, 70, 229, 0.15);
+  padding: 20px;
+  border-radius: 8px;
+  border: 2px solid #ff00b7;
+}
+
+.rf-amount-display {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.rf-currency {
+  font-size: 28px;
+  font-weight: 700;
+  color: #ffffff;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.rf-amount-number {
+  font-size: 48px;
+  font-weight: 700;
+  color: #ffffff;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.rf-amount-text {
+  font-size: 16px;
+  color: #9ca3af;
+  font-weight: 500;
+  margin-left: 5px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* Payment Button */
+.rf-payment-btn {
+  width: 100%;
+  padding: 16px 35px;
+  background:linear-gradient(135deg, #110e45 0%, #9a318a 100%);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  letter-spacing: 1px;
+  margin-bottom: 25px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+.rf-payment-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.rf-payment-btn:hover:not(:disabled)::before {
+  left: 100%;
+}
+
+.rf-payment-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(79, 70, 229, 0.4);
+}
+
+.rf-payment-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Payment Methods with Images */
+.rf-payment-methods {
+  text-align: center;
+  padding: 25px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 20px;
+}
+
+.rf-methods-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #9ca3af;
+
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.rf-methods-icons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.rf-method-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 15px 10px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+  cursor: default;
+  min-height: 100px;
+}
+
+.rf-method-item:hover {
+  border-color: #4f46e5;
+  transform: translateY(-4px);
+  box-shadow: 0 6px 20px rgba(79, 70, 229, 0.2);
+  background: rgba(79, 70, 229, 0.1);
+}
+
+.rf-payment-icon {
+  width: 60px;
+  height: 40px;
+  object-fit: contain;
+  display: block;
+}
+
+.rf-method-name {
+  font-size: 12px;
+  font-weight: 600;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* Security */
+.rf-security {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 15px 0;
+  flex-wrap: wrap;
+}
+
+.rf-security-icon {
+  font-size: 20px;
+}
+
+.rf-security-text {
+  font-size: 15px;
+  font-weight: 600;
+  color: #ffffff;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.rf-security-desc {
+  font-size: 13px;
+  color: #9ca3af;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* Support */
+.rf-support {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 15px 0 5px 0;
+}
+
+.rf-support-icon {
+  font-size: 18px;
+}
+
+.rf-support-text {
+  font-size: 14px;
+  color: #9ca3af;
+  font-weight: 500;
+  text-decoration: underline;
+  cursor: pointer;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  transition: color 0.3s ease;
+}
+
+.rf-support-text:hover {
+  color: #4f46e5;
+}
+
+/* Animations */
+@keyframes rf-fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+
+/* Tablets */
+@media (max-width: 768px) {
+  .rf-register-card {
+    padding: 32px 24px;
+    max-width: 100%;
+    border-radius: 20px;
+  }
+
+  .rf-title {
+    font-size: 26px;
+  }
+
+  .rf-summary-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .rf-amount-number {
+    font-size: 36px;
+  }
+
+  .rf-methods-icons {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    max-width: 400px;
+  }
+
+  .rf-payment-icon {
+    width: 50px;
+    height: 35px;
+  }
+}
+
+/* Mobile Portrait */
+@media (max-width: 480px) {
+  .rf-register-container {
+    padding: 16px;
+  }
+
+  .rf-register-card {
+    padding: 24px 18px;
+    border-radius: 20px;
+  }
+
+  .rf-title {
+    font-size: 22px;
+  }
+
+  .rf-subtitle {
+    font-size: 14px;
+    margin-bottom: 24px;
+    padding-bottom: 15px;
+  }
+
+  .rf-section {
+    margin-bottom: 20px;
+  }
+
+  .rf-section-title {
+    font-size: 15px;
+    margin-bottom: 10px;
+  }
+
+  .rf-summary-grid {
+    padding: 15px;
+  }
+
+  .rf-summary-value {
+    font-size: 14px;
+  }
+
+  .rf-amount-number {
+    font-size: 30px;
+  }
+
+  .rf-currency {
+    font-size: 22px;
+  }
+
+  .rf-amount-text {
+    font-size: 14px;
+  }
+
+  .rf-payment-btn {
+    font-size: 14px;
+    padding: 14px 20px;
+  }
+
+  .rf-methods-icons {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    max-width: 300px;
+  }
+
+  .rf-method-item {
+    padding: 12px 8px;
+    min-height: 80px;
+  }
+
+  .rf-payment-icon {
+    width: 45px;
+    height: 30px;
+  }
+
+  .rf-method-name {
+    font-size: 10px;
+  }
+
+  .rf-security-text {
+    font-size: 13px;
+  }
+
+  .rf-security-desc {
+    font-size: 12px;
+  }
+
+  .rf-support-text {
+    font-size: 13px;
+  }
+}
+
+/* Very Small Screens */
+@media (max-width: 380px) {
+  .rf-register-card {
+    padding: 18px 14px;
+  }
+
+  .rf-title {
+    font-size: 20px;
+  }
+
+  .rf-amount-number {
+    font-size: 26px;
+  }
+
+  .rf-currency {
+    font-size: 20px;
+  }
+
+  .rf-payment-btn {
+    font-size: 13px;
+    padding: 12px 15px;
+  }
+
+  .rf-methods-icons {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    max-width: 250px;
+  }
+
+  .rf-method-item {
+    padding: 10px 6px;
+    min-height: 70px;
+  }
+
+  .rf-payment-icon {
+    width: 35px;
+    height: 25px;
+  }
+
+  .rf-method-name {
+    font-size: 9px;
+  }
+}
+
+/* ============================================
+   DARK MODE SUPPORT
+   ============================================ */
+
+@media (prefers-color-scheme: dark) {
+  .rf-register-card {
+    background: rgba(8, 8, 8, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+
+  .rf-title {
+    color: #f3f4f6;
+  }
+
+  .rf-subtitle {
+    color: #9ca3af;
+  }
+
+  .rf-section-title {
+    color: #f3f4f6;
+  }
+
+  .rf-summary-grid {
+    background: rgba(255, 255, 255, 0.03);
+    border-color: rgba(255, 255, 255, 0.05);
+  }
+
+  .rf-summary-label {
+    color: #9ca3af;
+  }
+
+  .rf-summary-value {
+    color: #f3f4f6;
+  }
+
+  .rf-payment-section {
+    border-color: #818cf8;
+    background: rgba(99, 102, 241, 0.1);
+  }
+
+  .rf-currency {
+    color: #f3f4f6;
+  }
+
+  .rf-amount-number {
+    color: #f3f4f6;
+  }
+
+  .rf-payment-btn {
+    background: linear-gradient(135deg, #818cf8 0%, #6366f1 100%);
+  }
+
+  .rf-payment-btn:hover:not(:disabled) {
+    box-shadow: 0 8px 25px rgba(99, 102, 241, 0.5);
+  }
+
+  .rf-method-item {
+    background: rgba(255, 255, 255, 0.03);
+    border-color: rgba(255, 255, 255, 0.08);
+  }
+
+  .rf-method-item:hover {
+    border-color: #818cf8;
+    background: rgba(99, 102, 241, 0.15);
+  }
+
+  .rf-method-name {
+    color: #f3f4f6;
+  }
+
+  .rf-security-text {
+    color: #f3f4f6;
+  }
+
+  .rf-security-desc {
+    color: #9ca3af;
+  }
+
+  .rf-support-text {
+    color: #9ca3af;
+  }
+
+  .rf-support-text:hover {
+    color: #818cf8;
+  }
+}

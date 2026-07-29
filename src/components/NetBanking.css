@@ -1,0 +1,362 @@
+/* NetBanking Page - Complete Styles */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  background: #f5f5f5;
+  color: #333;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Wrapper */
+.nb-wrapper {
+  width: 100%;
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 0 20px;
+}
+
+/* Card - Now with full border-radius since header is removed */
+.nb-card {
+  background: white;
+  padding: 40px 45px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+  width: 100%;
+}
+
+.nb-back-btn {
+  background: none;
+  border: none;
+  color: #1a1a2e;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 5px 0;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: color 0.2s;
+}
+
+.nb-back-btn:hover {
+  color: #e74c3c;
+}
+
+.nb-title {
+  font-size: 26px;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin-bottom: 5px;
+  letter-spacing: -0.5px;
+}
+
+.nb-subtitle {
+  color: #666;
+  font-size: 15px;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+/* Form Groups */
+.nb-form-group {
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.nb-form-group label {
+  display: block;
+  font-weight: 600;
+  font-size: 14px;
+  color: #1a1a2e;
+  margin-bottom: 6px;
+}
+
+.nb-input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  background: white;
+}
+
+.nb-input:focus {
+  outline: none;
+  border-color: #1a1a2e;
+  box-shadow: 0 0 0 3px rgba(26, 26, 46, 0.1);
+}
+
+/* Select Dropdown */
+.nb-select {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  background: white;
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 20px;
+  cursor: pointer;
+}
+
+.nb-select:focus {
+  outline: none;
+  border-color: #1a1a2e;
+  box-shadow: 0 0 0 3px rgba(26, 26, 46, 0.1);
+}
+
+.nb-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.nb-input-wrapper .nb-input {
+  padding-right: 50px;
+}
+
+.nb-input-icon {
+  position: absolute;
+  right: 15px;
+  font-size: 20px;
+  opacity: 0.5;
+}
+
+/* Password Toggle Button */
+.nb-password-toggle {
+  position: absolute;
+  right: 12px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 5px;
+  opacity: 0.6;
+  transition: all 0.3s ease;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nb-password-toggle:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+.nb-password-toggle:focus {
+  outline: 2px solid #1a1a2e;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Transaction ID Hint */
+.nb-transaction-hint {
+  margin-top: 6px;
+  font-size: 12px;
+  color: #888;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.nb-transaction-hint span {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* Password Links */
+.nb-password-links {
+  text-align: right;
+  margin-bottom: 25px;
+}
+
+.nb-forgot-link {
+  color: #1a1a2e;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.nb-forgot-link:hover {
+  color: #e74c3c;
+  text-decoration: underline;
+}
+
+/* Payment Button */
+.nb-payment-btn {
+  width: 100%;
+  padding: 16px 35px;
+  background: #1a1a2e;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  letter-spacing: 1px;
+  margin-top: 10px;
+}
+
+.nb-payment-btn:hover:not(:disabled) {
+  background: #2a2a4e;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(26, 26, 46, 0.3);
+}
+
+.nb-payment-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Security */
+.nb-security {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 20px 0 5px 0;
+  flex-wrap: wrap;
+  border-top: 1px solid #f0f0f0;
+  margin-top: 20px;
+}
+
+.nb-security-icon {
+  font-size: 20px;
+}
+
+.nb-security-text {
+  font-size: 15px;
+  font-weight: 500;
+  color: #666;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+
+/* Tablets */
+@media (max-width: 768px) {
+  .nb-card {
+    padding: 25px 20px;
+  }
+
+  .nb-title {
+    font-size: 22px;
+  }
+}
+
+/* Mobile Portrait */
+@media (max-width: 480px) {
+  .nb-wrapper {
+    padding: 0 10px;
+    margin: 10px auto;
+  }
+
+  .nb-card {
+    padding: 18px 15px;
+  }
+
+  .nb-title {
+    font-size: 20px;
+  }
+
+  .nb-subtitle {
+    font-size: 14px;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+  }
+
+  .nb-form-group label {
+    font-size: 13px;
+  }
+
+  .nb-input,
+  .nb-select {
+    padding: 10px 14px;
+    font-size: 14px;
+  }
+
+  .nb-input-wrapper .nb-input {
+    padding-right: 45px;
+  }
+
+  .nb-password-toggle {
+    font-size: 18px;
+    right: 10px;
+  }
+
+  .nb-payment-btn {
+    font-size: 14px;
+    padding: 14px 20px;
+  }
+
+  .nb-security-text {
+    font-size: 13px;
+  }
+
+  .nb-password-links {
+    margin-bottom: 20px;
+  }
+
+  .nb-forgot-link {
+    font-size: 13px;
+  }
+
+  .nb-transaction-hint {
+    font-size: 11px;
+  }
+}
+
+/* Very Small Screens */
+@media (max-width: 360px) {
+  .nb-card {
+    padding: 12px 10px;
+  }
+
+  .nb-title {
+    font-size: 18px;
+  }
+
+  .nb-input,
+  .nb-select {
+    padding: 8px 12px;
+    font-size: 13px;
+  }
+
+  .nb-input-wrapper .nb-input {
+    padding-right: 40px;
+  }
+
+  .nb-password-toggle {
+    font-size: 16px;
+    right: 8px;
+  }
+
+  .nb-payment-btn {
+    font-size: 13px;
+    padding: 12px 15px;
+  }
+
+  .nb-transaction-hint {
+    font-size: 10px;
+  }
+}

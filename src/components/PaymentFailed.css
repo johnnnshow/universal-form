@@ -1,0 +1,616 @@
+/* PaymentFailed.css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.pf-payment-page {
+  width: 100%;
+  min-height: 100vh;
+  height: 100vh;
+  background: #bdbdbd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px;
+}
+
+.pf-payment-overlay {
+  position: relative;
+  width: 390px;
+  height: 844px;
+  max-width: 100%;
+  max-height: 100vh;
+  background: rgba(0, 0, 0, 0.18);
+  overflow: hidden;
+  border-radius: 32px;
+  flex-shrink: 0;
+}
+
+/* Failed Content */
+.pf-failed-content {
+  position: absolute;
+  top: 180px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.pf-failed-icon {
+  width: 60px;
+  height: 60px;
+  border: 3px solid #8B3A2F;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #8B3A2F;
+  font-size: 34px;
+  font-weight: bold;
+  backdrop-filter: blur(2px);
+}
+
+.pf-failed-title {
+  margin-top: 18px;
+  font-size: 22px;
+  color: #222;
+  font-weight: 500;
+  text-align: center;
+  padding: 6px 20px;
+  border-radius: 30px;
+  backdrop-filter: blur(2px);
+}
+
+/* Bottom Sheet */
+.pf-bottom-sheet {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background: #fff;
+  border-radius: 20px 20px 0 0;
+  box-shadow: 0 -4px 18px rgba(0, 0, 0, 0.18);
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+.pf-sheet-title {
+  padding: 22px 22px 12px;
+  font-size: 25px;
+  color: #222;
+  font-weight: 600;
+}
+
+.pf-issue-list {
+  padding: 0 34px 0 40px;
+  list-style: none;
+}
+
+.pf-issue-item {
+  margin-bottom: 12px;
+  color: #444;
+  font-size: 16px;
+  line-height: 1.45;
+  position: relative;
+  padding-left: 6px;
+}
+
+.pf-issue-item::before {
+  content: "•";
+  color: #6a1b9a;
+  font-weight: bold;
+  font-size: 20px;
+  margin-right: 8px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.pf-retry-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px 22px 18px;
+}
+
+.pf-retry-btn {
+  border: 2px solid #6a1b9a;
+  color: #6a1b9a;
+  background: white;
+  border-radius: 30px;
+  padding: 10px 28px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.25s;
+  touch-action: manipulation;
+}
+
+.pf-retry-btn:hover {
+  background: #6a1b9a;
+  color: #fff;
+}
+
+.pf-retry-btn:active {
+  transform: scale(0.96);
+}
+
+.pf-bottom-buttons {
+  display: flex;
+  border-top: 1px solid #e6e6e6;
+}
+
+.pf-bottom-buttons button {
+  flex: 1;
+  height: 65px;
+  border: none;
+  background: #9400d3;
+  cursor: pointer;
+  font-size: 17px;
+  transition: background 0.2s;
+  touch-action: manipulation;
+  color: #ffffff;
+}
+
+.pf-details-btn {
+  color: #5E35B1;
+  border-right: 1px solid #e6e6e6;
+}
+
+.pf-done-btn {
+  color: #ffffff;
+}
+
+.pf-bottom-buttons button:hover {
+  background: #7a00b3;
+}
+
+.pf-bottom-buttons button:active {
+  background: #660099;
+}
+
+/* ============================================ */
+/* RESPONSIVE BREAKPOINTS */
+/* ============================================ */
+
+/* Large screens (desktops, large laptops) */
+@media (min-width: 1025px) {
+  .pf-payment-page {
+    padding: 20px;
+  }
+  
+  .pf-payment-overlay {
+    width: 420px;
+    height: 860px;
+  }
+}
+
+/* Tablets & smaller laptops */
+@media (max-width: 1024px) {
+  .pf-payment-overlay {
+    width: 380px;
+    height: 800px;
+  }
+}
+
+/* iPad and tablets */
+@media (max-width: 820px) {
+  .pf-payment-page {
+    padding: 10px;
+  }
+  
+  .pf-payment-overlay {
+    width: 100%;
+    max-width: 500px;
+    height: 800px;
+    border-radius: 28px;
+  }
+  
+  .pf-failed-content {
+    top: 170px;
+  }
+}
+
+/* Large phones & small tablets */
+@media (max-width: 768px) {
+  .pf-payment-page {
+    padding: 8px;
+    height: 100vh;
+    min-height: 100vh;
+  }
+
+  .pf-payment-overlay {
+    width: 100%;
+    height: 100%;
+    max-height: 844px;
+    border-radius: 24px;
+  }
+
+  .pf-failed-content {
+    top: 160px;
+  }
+
+  .pf-failed-title {
+    font-size: 20px;
+    padding: 5px 16px;
+  }
+
+  .pf-sheet-title {
+    font-size: 23px;
+    padding: 18px 18px 10px;
+  }
+
+  .pf-issue-list {
+    padding: 0 24px 0 30px;
+  }
+
+  .pf-issue-item {
+    font-size: 15px;
+  }
+}
+
+/* Mobile phones (portrait) */
+@media (max-width: 480px) {
+  .pf-payment-page {
+    padding: 0;
+    height: 100vh;
+    min-height: 100vh;
+    align-items: stretch;
+  }
+
+  .pf-payment-overlay {
+    width: 100%;
+    height: 100vh;
+    max-height: 100vh;
+    border-radius: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .pf-failed-content {
+    position: relative;
+    top: 0;
+    padding: 160px 20px 20px;
+    flex-shrink: 0;
+  }
+
+  .pf-failed-icon {
+    width: 52px;
+    height: 52px;
+    font-size: 28px;
+
+  }
+
+  .pf-failed-title {
+    font-size: 18px;
+    margin-top: 14px;
+    padding: 4px 14px;
+  }
+
+  .pf-bottom-sheet {
+    position: relative;
+    border-radius: 16px 16px 0 0;
+    flex-shrink: 0;
+    margin-top: auto;
+  }
+
+  .pf-sheet-title {
+    font-size: 20px;
+    padding: 16px 16px 8px;
+  }
+
+  .pf-issue-list {
+    padding: 0 18px 0 24px;
+  }
+
+  .pf-issue-item {
+    font-size: 14px;
+    margin-bottom: 10px;
+    line-height: 1.4;
+  }
+
+  .pf-issue-item::before {
+    font-size: 18px;
+    margin-right: 6px;
+  }
+
+  .pf-retry-wrapper {
+    padding: 6px 16px 14px;
+  }
+
+  .pf-retry-btn {
+    padding: 8px 22px;
+    font-size: 13px;
+  }
+
+  .pf-bottom-buttons button {
+    height: 56px;
+    font-size: 15px;
+  }
+}
+
+/* Small phones (<= 375px) */
+@media (max-width: 375px) {
+  .pf-payment-page {
+    padding: 0;
+  }
+
+  .pf-payment-overlay {
+    border-radius: 0;
+    height: 100vh;
+    max-height: 100vh;
+  }
+
+  .pf-failed-content {
+    padding: 250px 16px 16px;
+  }
+
+  .pf-failed-icon {
+    width: 46px;
+    height: 46px;
+    font-size: 24px;
+    border-width: 2.5px;
+  }
+
+  .pf-failed-title {
+    font-size: 16px;
+    margin-top: 12px;
+    padding: 4px 12px;
+  }
+
+  .pf-bottom-sheet {
+    border-radius: 12px 12px 0 0;
+  }
+
+  .pf-sheet-title {
+    font-size: 18px;
+    padding: 12px 14px 6px;
+  }
+
+  .pf-issue-list {
+    padding: 0 14px 0 18px;
+  }
+
+  .pf-issue-item {
+    font-size: 13px;
+    margin-bottom: 8px;
+  }
+
+  .pf-issue-item::before {
+    font-size: 16px;
+    margin-right: 4px;
+  }
+
+  .pf-retry-wrapper {
+    padding: 4px 12px 10px;
+  }
+
+  .pf-retry-btn {
+    padding: 6px 18px;
+    font-size: 12px;
+    border-width: 1.5px;
+  }
+
+  .pf-bottom-buttons button {
+    height: 48px;
+    font-size: 13px;
+  }
+}
+
+/* Extra small devices (<= 320px) */
+@media (max-width: 320px) {
+  .pf-failed-content {
+    padding: 250px 12px 12px;
+  }
+
+  .pf-failed-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    border-width: 2px;
+  }
+
+  .pf-failed-title {
+    font-size: 14px;
+    margin-top: 10px;
+    padding: 4px 10px;
+  }
+
+  .pf-sheet-title {
+    font-size: 16px;
+    padding: 10px 12px 4px;
+  }
+
+  .pf-issue-list {
+    padding: 0 10px 0 14px;
+  }
+
+  .pf-issue-item {
+    font-size: 12px;
+    margin-bottom: 6px;
+  }
+
+  .pf-retry-btn {
+    padding: 5px 14px;
+    font-size: 11px;
+  }
+
+  .pf-bottom-buttons button {
+    height: 42px;
+    font-size: 12px;
+  }
+}
+
+/* Landscape mode for phones */
+@media (max-height: 500px) and (orientation: landscape) {
+  .pf-payment-page {
+    padding: 0;
+    height: 100vh;
+    align-items: stretch;
+  }
+
+  .pf-payment-overlay {
+    height: 100vh;
+    max-height: 100vh;
+    border-radius: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .pf-failed-content {
+    position: relative;
+    top: 0;
+    padding: 250px 16px 10px;
+    flex-shrink: 0;
+  }
+
+  .pf-failed-icon {
+    width: 36px;
+    height: 36px;
+    font-size: 18px;
+    border-width: 2px;
+  }
+
+  .pf-failed-title {
+    font-size: 15px;
+    margin-top: 8px;
+    padding: 3px 12px;
+  }
+
+  .pf-bottom-sheet {
+    position: relative;
+    border-radius: 12px 12px 0 0;
+    flex-shrink: 0;
+  }
+
+  .pf-sheet-title {
+    font-size: 16px;
+    padding: 8px 16px 4px;
+  }
+
+  .pf-issue-list {
+    padding: 0 16px 0 20px;
+  }
+
+  .pf-issue-item {
+    font-size: 12px;
+    margin-bottom: 4px;
+  }
+
+  .pf-retry-wrapper {
+    padding: 2px 16px 6px;
+  }
+
+  .pf-retry-btn {
+    padding: 4px 16px;
+    font-size: 11px;
+  }
+
+  .pf-bottom-buttons button {
+    height: 38px;
+    font-size: 12px;
+  }
+}
+
+/* Very tall screens */
+@media (min-height: 850px) and (max-width: 480px) {
+  .pf-failed-content {
+    padding: 250px 20px 30px;
+  }
+  
+  .pf-failed-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 32px;
+  }
+  
+  .pf-failed-title {
+    font-size: 20px;
+    margin-top: 20px;
+  }
+  
+  .pf-sheet-title {
+    font-size: 22px;
+    padding: 20px 22px 12px;
+  }
+  
+  .pf-issue-item {
+    font-size: 15px;
+    margin-bottom: 12px;
+  }
+}
+
+/* Foldable phones */
+@media (max-width: 280px) {
+  .pf-failed-content {
+    padding: 15px 8px 10px;
+  }
+  
+  .pf-failed-icon {
+    width: 32px;
+    height: 32px;
+    font-size: 16px;
+    border-width: 2px;
+  }
+  
+  .pf-failed-title {
+    font-size: 12px;
+    padding: 3px 8px;
+    margin-top: 8px;
+  }
+  
+  .pf-sheet-title {
+    font-size: 14px;
+    padding: 8px 10px 4px;
+  }
+  
+  .pf-issue-list {
+    padding: 0 8px 0 12px;
+  }
+  
+  .pf-issue-item {
+    font-size: 10px;
+    margin-bottom: 4px;
+  }
+  
+  .pf-retry-btn {
+    padding: 4px 12px;
+    font-size: 10px;
+  }
+  
+  .pf-bottom-buttons button {
+    height: 36px;
+    font-size: 10px;
+  }
+}
+
+/* High DPI screens */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .pf-payment-overlay {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .pf-retry-btn {
+    transition: none;
+  }
+  
+  .pf-retry-btn:hover {
+    background: white;
+    color: #6a1b9a;
+  }
+  
+  .pf-bottom-buttons button {
+    transition: none;
+  }
+  
+  .pf-bottom-buttons button:hover {
+    background: white;
+  }
+}

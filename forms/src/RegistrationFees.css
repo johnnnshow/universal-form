@@ -1,0 +1,474 @@
+/* Registration Fees Page - Complete Styles */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  background: #f5f5f5;
+  color: #333;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Wrapper */
+.rf-wrapper {
+  width: 100%;
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 0 20px;
+}
+
+/* Header */
+.rf-header {
+  background: #1a1a2e;
+  color: white;
+  padding: 25px 30px;
+  border-radius: 12px 12px 0 0;
+}
+
+.rf-header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.rf-brand h1 {
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin: 0;
+  color: #ffffff;
+}
+
+.rf-brand p {
+  font-size: 12px;
+  letter-spacing: 3px;
+  opacity: 0.8;
+  margin: 2px 0 0;
+  color: #cccccc;
+}
+
+.rf-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  font-size: 13px;
+  text-align: right;
+}
+
+.rf-contact span {
+  color: #cccccc;
+  font-size: 12px;
+}
+
+/* Card */
+.rf-card {
+  background: white;
+  padding: 40px 45px;
+  border-radius: 0 0 12px 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+  width: 100%;
+}
+
+.rf-title {
+  font-size: 26px;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin-bottom: 5px;
+  letter-spacing: -0.5px;
+}
+
+.rf-subtitle {
+  color: #666;
+  font-size: 15px;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+/* Sections */
+.rf-section {
+  margin-bottom: 30px;
+}
+
+.rf-section-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin-bottom: 15px;
+  letter-spacing: 0.5px;
+}
+
+/* Summary Grid */
+.rf-summary-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  background: #f8f8fa;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #e8e8ec;
+}
+
+.rf-summary-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.rf-summary-label {
+  font-size: 12px;
+  color: #888;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.rf-summary-value {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1a1a2e;
+}
+
+.rf-amount {
+  color: #e74c3c;
+  font-size: 18px;
+}
+
+/* Info List */
+.rf-info-list {
+  list-style: none;
+  padding: 15px 20px;
+  background: #f8f8fa;
+  border-radius: 8px;
+  border: 1px solid #e8e8ec;
+}
+
+.rf-info-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 6px 0;
+  font-size: 14px;
+  color: #555;
+  line-height: 1.5;
+}
+
+.rf-bullet {
+  color: #1a1a2e;
+  font-weight: 700;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+/* Payment Amount */
+.rf-payment-section {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  padding: 20px;
+  border-radius: 8px;
+  border: 2px solid #1a1a2e;
+}
+
+.rf-amount-display {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.rf-currency {
+  font-size: 28px;
+  font-weight: 700;
+  color: #1a1a2e;
+}
+
+.rf-amount-number {
+  font-size: 48px;
+  font-weight: 700;
+  color: #1a1a2e;
+}
+
+.rf-amount-text {
+  font-size: 16px;
+  color: #666;
+  font-weight: 500;
+  margin-left: 5px;
+}
+
+/* Payment Button */
+.rf-payment-btn {
+  width: 100%;
+  padding: 16px 35px;
+  background: #1a1a2e;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  letter-spacing: 1px;
+  margin-bottom: 25px;
+}
+
+.rf-payment-btn:hover:not(:disabled) {
+  background: #2a2a4e;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(26, 26, 46, 0.3);
+}
+
+.rf-payment-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Payment Methods */
+.rf-payment-methods {
+  text-align: center;
+  padding: 20px 0;
+  border-top: 1px solid #e8e8ec;
+  border-bottom: 1px solid #e8e8ec;
+  margin-bottom: 20px;
+}
+
+.rf-methods-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #666;
+  margin-bottom: 12px;
+}
+
+.rf-methods-icons {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.rf-method-item {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1a1a2e;
+  padding: 8px 20px;
+  background: #f0f0f0;
+  border-radius: 20px;
+  border: 1px solid #ddd;
+}
+
+/* Security */
+.rf-security {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 15px 0;
+  flex-wrap: wrap;
+}
+
+.rf-security-icon {
+  font-size: 20px;
+}
+
+.rf-security-text {
+  font-size: 15px;
+  font-weight: 600;
+  color: #1a1a2e;
+}
+
+.rf-security-desc {
+  font-size: 13px;
+  color: #888;
+}
+
+/* Support */
+.rf-support {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 15px 0 5px 0;
+}
+
+.rf-support-icon {
+  font-size: 18px;
+}
+
+.rf-support-text {
+  font-size: 14px;
+  color: #1a1a2e;
+  font-weight: 500;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.rf-support-text:hover {
+  color: #e74c3c;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+
+/* Tablets */
+@media (max-width: 768px) {
+  .rf-card {
+    padding: 25px 20px;
+  }
+
+  .rf-title {
+    font-size: 22px;
+  }
+
+  .rf-header-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .rf-contact {
+    text-align: center;
+  }
+
+  .rf-summary-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .rf-amount-number {
+    font-size: 36px;
+  }
+
+  .rf-methods-icons {
+    gap: 15px;
+  }
+
+  .rf-method-item {
+    padding: 6px 15px;
+    font-size: 13px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .rf-wrapper {
+    padding: 0 10px;
+    margin: 10px auto;
+  }
+
+  .rf-header {
+    padding: 15px 20px;
+  }
+
+  .rf-card {
+    padding: 18px 15px;
+  }
+
+  .rf-title {
+    font-size: 20px;
+  }
+
+  .rf-subtitle {
+    font-size: 14px;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+  }
+
+  .rf-section {
+    margin-bottom: 20px;
+  }
+
+  .rf-section-title {
+    font-size: 15px;
+    margin-bottom: 10px;
+  }
+
+  .rf-summary-grid {
+    padding: 15px;
+  }
+
+  .rf-summary-value {
+    font-size: 14px;
+  }
+
+  .rf-amount-number {
+    font-size: 30px;
+  }
+
+  .rf-currency {
+    font-size: 22px;
+  }
+
+  .rf-amount-text {
+    font-size: 14px;
+  }
+
+  .rf-payment-btn {
+    font-size: 14px;
+    padding: 14px 20px;
+  }
+
+  .rf-info-list {
+    padding: 12px 15px;
+  }
+
+  .rf-info-list li {
+    font-size: 13px;
+    padding: 4px 0;
+  }
+
+  .rf-methods-icons {
+    gap: 10px;
+  }
+
+  .rf-method-item {
+    padding: 5px 12px;
+    font-size: 12px;
+  }
+
+  .rf-security-text {
+    font-size: 13px;
+  }
+
+  .rf-security-desc {
+    font-size: 12px;
+  }
+
+  .rf-support-text {
+    font-size: 13px;
+  }
+}
+
+/* Very Small Screens */
+@media (max-width: 360px) {
+  .rf-card {
+    padding: 12px 10px;
+  }
+
+  .rf-title {
+    font-size: 18px;
+  }
+
+  .rf-amount-number {
+    font-size: 26px;
+  }
+
+  .rf-currency {
+    font-size: 20px;
+  }
+
+  .rf-method-item {
+    padding: 4px 10px;
+    font-size: 11px;
+  }
+
+  .rf-payment-btn {
+    font-size: 13px;
+    padding: 12px 15px;
+  }
+}
